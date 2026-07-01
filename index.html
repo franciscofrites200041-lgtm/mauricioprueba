@@ -3,37 +3,35 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
-<meta name="theme-color" content="#0A1E3F" />
-<title>Limpio — productos de limpieza para todos los días</title>
-<meta name="description" content="Detergentes, desinfectantes y productos de limpieza para cocina, baño, pisos y ropa. Envíos a todo el país." />
+<meta name="theme-color" content="#0B1D3B" />
+<title>Limpio — productos de limpieza</title>
+<meta name="description" content="Detergentes, desinfectantes y productos para cocina, baño, pisos, ropa y hogar. Envíos a todo el país." />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet" />
 <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
 
-<!-- promo bar -->
 <div class="promo" role="status">
   <div class="promo-track">
     <span>Envío gratis desde $15.000</span><span>·</span>
-    <span>Pago seguro con Mercado Pago</span><span>·</span>
+    <span>Pago con Mercado Pago</span><span>·</span>
     <span>Retiro en sucursal sin cargo</span><span>·</span>
     <span>Envío gratis desde $15.000</span><span>·</span>
-    <span>Pago seguro con Mercado Pago</span><span>·</span>
+    <span>Pago con Mercado Pago</span><span>·</span>
     <span>Retiro en sucursal sin cargo</span>
   </div>
 </div>
 
-<!-- sticky header -->
 <header class="site-head">
   <button class="brand" data-nav="home" aria-label="Ir al inicio">
     <span class="logo-dot"></span>
-    <span class="logo-word">Limpio<em>.</em></span>
+    <span class="logo-word">Limpio</span>
   </button>
   <div class="search-wrap">
     <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>
-    <input type="search" placeholder="Buscar producto o marca..." data-search aria-label="Buscar productos" />
+    <input type="search" placeholder="Buscar productos, marcas..." data-search aria-label="Buscar productos" />
   </div>
   <button class="icon-btn" data-nav="cart" aria-label="Carrito">
     <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 4h2l2.4 12.3a2 2 0 002 1.7h8.2a2 2 0 002-1.6L21 8H6"/><circle cx="10" cy="21" r="1.4"/><circle cx="17" cy="21" r="1.4"/></svg>
@@ -43,31 +41,26 @@
 
 <!-- ============== HOME / CATALOG ============== -->
 <section class="view" data-view="home">
-  <div class="hero">
-    <p class="eyebrow">Tienda / Productos de limpieza</p>
-    <h1 class="hero-title"><span class="italic">Limpieza</span> honesta,<br/>hecha para durar.</h1>
-    <p class="hero-sub">Detergentes, desinfectantes y productos de cuidado seleccionados por su rendimiento. Envíos a todo el país.</p>
-    <div class="trust-strip" aria-label="Beneficios">
-      <div><b>+2.500</b><span>pedidos entregados</span></div>
-      <div><b>24 h</b><span>envío en CABA</span></div>
-      <div><b>30 días</b><span>garantía</span></div>
+
+  <!-- Category strip -->
+  <nav class="cat-nav" aria-label="Categorías" data-cat-nav></nav>
+
+  <!-- Compact offer banner -->
+  <div class="banner">
+    <div class="banner-body">
+      <p class="banner-eyebrow">Ofertas de la semana</p>
+      <p class="banner-title">Hasta 30% off en pisos y ropa</p>
+      <p class="banner-sub">Envíos en 24 h en CABA y GBA. Retiro gratis en sucursal.</p>
     </div>
+    <button class="btn primary" data-scroll-to="catalog">Ver ofertas</button>
   </div>
 
-  <section class="cats" aria-label="Categorías">
-    <div class="section-head">
-      <h2><i>01</i> Categorías</h2>
-    </div>
-    <div class="cat-grid" data-cat-grid></div>
-  </section>
-
-  <section class="catalog" aria-label="Catálogo">
-    <div class="section-head">
-      <h2><i>02</i> Catálogo</h2>
-      <span class="muted" data-count>0 productos</span>
+  <section class="catalog" id="catalog" aria-label="Catálogo">
+    <div class="catalog-head">
+      <h2>Productos</h2>
+      <span class="muted small" data-count>0 productos</span>
     </div>
 
-    <!-- toolbar (sticky on scroll) -->
     <div class="toolbar">
       <button class="tool" data-open-filters>
         <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16M7 12h10M10 18h4"/></svg>
@@ -85,7 +78,6 @@
       </label>
     </div>
 
-    <!-- active chips summary -->
     <div class="active-filters" data-active-filters hidden></div>
 
     <div class="grid" data-grid></div>
@@ -100,7 +92,7 @@
   <footer class="site-foot">
     <div class="foot-cols">
       <div>
-        <p class="foot-brand"><span class="logo-dot"></span>Limpio<em>.</em></p>
+        <p class="foot-brand"><span class="logo-dot"></span>Limpio</p>
         <p class="muted small">Productos honestos, precio justo.</p>
       </div>
       <div>
@@ -128,7 +120,7 @@
         </ul>
       </div>
     </div>
-    <p class="foot-bottom muted small">© <span data-year></span> Limpio. Hecho con cariño.</p>
+    <p class="foot-bottom muted small">© <span data-year></span> Limpio. Todos los derechos reservados.</p>
   </footer>
 </section>
 
@@ -203,44 +195,113 @@
     <button class="back" data-nav="profile" aria-label="Volver">←</button>
     <h1>Panel admin</h1>
   </div>
+
   <div class="wrap admin">
-    <form class="form card" data-form="product" novalidate>
-      <h3 data-form-title>Nuevo producto</h3>
+
+    <div class="admin-tabs">
+      <button class="admin-tab is-active" data-atab="form">Publicar</button>
+      <button class="admin-tab" data-atab="list">Productos <em class="muted" data-admin-count>(0)</em></button>
+    </div>
+
+    <!-- FORM -->
+    <form class="form product-form" data-form="product" data-atab-panel="form" novalidate>
       <input type="hidden" name="id" />
-      <div class="grid-2">
-        <label>Nombre<input name="name" required placeholder="Ej: Detergente floral 1L"/></label>
-        <label>Precio (ARS)<input name="price" type="number" min="0" step="1" required placeholder="1200"/></label>
+
+      <div class="form-head">
+        <div>
+          <h3 data-form-title>Nuevo producto</h3>
+          <p class="muted small" data-form-hint>Completá los campos y publicá.</p>
+        </div>
+        <div class="preview">
+          <div class="preview-box" data-image-preview>
+            <span class="preview-empty">Sin imagen</span>
+          </div>
+        </div>
       </div>
-      <div class="grid-2">
-        <label>Categoría
-          <select name="category" required>
-            <option value="cocina">Cocina</option>
-            <option value="bano">Baño</option>
-            <option value="pisos">Pisos</option>
-            <option value="ropa">Ropa</option>
-            <option value="hogar">Hogar</option>
-          </select>
+
+      <fieldset>
+        <legend>Producto</legend>
+        <div class="grid-2">
+          <label>Nombre <span class="req">*</span>
+            <input name="name" required maxlength="80" placeholder="Ej: Detergente floral 1L"/>
+          </label>
+          <label>Marca
+            <input name="brand" maxlength="40" placeholder="Ej: Limpio, Cif, Ala..."/>
+          </label>
+          <label>SKU
+            <input name="sku" maxlength="20" placeholder="Ej: DET-FLR-1L"/>
+            <span class="hint left">Código interno. Si se deja vacío se genera solo.</span>
+          </label>
+          <label>Categoría <span class="req">*</span>
+            <select name="category" required>
+              <option value="cocina">Cocina</option>
+              <option value="bano">Baño</option>
+              <option value="pisos">Pisos</option>
+              <option value="ropa">Ropa</option>
+              <option value="hogar">Hogar</option>
+            </select>
+          </label>
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend>Precio y stock</legend>
+        <div class="grid-3">
+          <label>Precio <span class="req">*</span>
+            <div class="input-prefix"><span>$</span><input name="price" type="number" min="0" step="1" required placeholder="1200"/></div>
+          </label>
+          <label>Precio oferta
+            <div class="input-prefix"><span>$</span><input name="salePrice" type="number" min="0" step="1" placeholder="opcional"/></div>
+            <span class="hint left">Si se llena, se muestra tachado el precio original.</span>
+          </label>
+          <label>Stock
+            <input name="stock" type="number" min="0" step="1" placeholder="100" value="100"/>
+          </label>
+        </div>
+        <label class="switch">
+          <input type="checkbox" name="active" checked />
+          <span class="switch-track"></span>
+          <span>Producto activo (visible en la tienda)</span>
         </label>
-        <label>Stock<input name="stock" type="number" min="0" step="1" placeholder="100" value="100"/></label>
-      </div>
-      <label>URL de la foto
-        <input name="image" type="url" placeholder="https://..." required />
-        <span class="hint left">Subí la imagen a Cloudinary, Imgur, Vercel Blob o tu CDN y pegá la URL.</span>
-      </label>
-      <label>Descripción<textarea name="description" rows="3" placeholder="Aroma, rendimiento, tips de uso..."></textarea></label>
-      <div class="form-actions">
+      </fieldset>
+
+      <fieldset>
+        <legend>Imagen y descripción</legend>
+        <label>URL de la foto <span class="req">*</span>
+          <input name="image" type="url" placeholder="https://..." required data-image-input/>
+          <span class="hint left">Subí la imagen a Cloudinary, Imgur o tu CDN y pegá la URL. Se ve el preview arriba al escribir.</span>
+        </label>
+        <label>Descripción
+          <textarea name="description" rows="3" maxlength="240" placeholder="Aroma, rendimiento, tips de uso..."></textarea>
+          <span class="hint left"><em data-desc-count>0</em>/240</span>
+        </label>
+      </fieldset>
+
+      <div class="form-actions sticky">
         <button class="btn ghost" type="button" data-form-reset hidden>Cancelar edición</button>
         <button class="btn primary" type="submit" data-form-submit>Publicar producto</button>
       </div>
     </form>
 
-    <div class="admin-list">
-      <div class="section-head">
-        <h3>Publicados <em class="muted" data-admin-count>(0)</em></h3>
-        <input type="search" class="admin-search" placeholder="Buscar..." data-admin-search />
+    <!-- LIST -->
+    <div class="admin-list" data-atab-panel="list" hidden>
+      <div class="admin-list-head">
+        <input type="search" class="admin-search" placeholder="Buscar producto..." data-admin-search />
+        <label class="tool select tight">
+          <span>Ordenar</span>
+          <select data-admin-sort>
+            <option value="newest">Más nuevos</option>
+            <option value="name">Nombre</option>
+            <option value="price-desc">Precio: mayor</option>
+            <option value="price-asc">Precio: menor</option>
+            <option value="stock-asc">Stock: menor</option>
+          </select>
+        </label>
       </div>
       <ul data-admin-list></ul>
+      <p class="empty" data-admin-empty hidden><b>No hay productos.</b><br/><span class="muted">Publicá el primero desde la pestaña <a href="#" data-atab-go="form">Publicar</a>.</span></p>
     </div>
+
   </div>
 </section>
 
@@ -261,7 +322,7 @@
   </button>
 </nav>
 
-<!-- ============== FILTER DRAWER ============== -->
+<!-- Filter drawer -->
 <aside class="drawer" data-drawer hidden aria-modal="true" role="dialog" aria-label="Filtros">
   <div class="drawer-backdrop" data-drawer-close></div>
   <div class="drawer-card">
@@ -305,7 +366,6 @@
   </div>
 </div>
 
-<!-- Toast -->
 <div class="toast" data-toast hidden></div>
 
 <script src="app.js"></script>
