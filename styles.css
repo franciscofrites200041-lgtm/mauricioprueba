@@ -730,8 +730,7 @@ p{margin:0}
 
 @media (max-width:520px){
   .site-head{grid-template-columns:auto 1fr auto;gap:8px}
-  .logo-word{display:none}
-  .brand{padding:0}
+  .logo-word{font-size:1rem}
   .banner{padding:18px 20px}
   .banner-title{font-size:1.05rem}
 }
