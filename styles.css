@@ -25,6 +25,7 @@
 
 *{box-sizing:border-box}
 html,body{margin:0;padding:0}
+[hidden]{display:none !important} /* ponytail: override display:grid/flex on .sheet et al */
 body{
   font-family:var(--sans);
   color:var(--ink);
