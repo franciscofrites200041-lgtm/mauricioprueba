@@ -401,34 +401,36 @@
   <div class="sheet-backdrop" data-sheet-close></div>
   <div class="sheet-card">
     <button class="sheet-close" data-sheet-close aria-label="Cerrar">×</button>
-    <img data-sheet-img alt="" loading="lazy"/>
-    <div class="sheet-body">
-      <span class="tag" data-sheet-cat></span>
-      <p class="brand-line" data-sheet-brand></p>
-      <h3 data-sheet-name></h3>
-      <div class="sheet-rating" data-sheet-rating></div>
-      <div class="sheet-prices">
-        <span class="price" data-sheet-price></span>
-        <span class="price-old" data-sheet-price-old hidden></span>
-        <span class="sale-tag" data-sheet-sale hidden></span>
-      </div>
-      <p class="ship-note small" data-sheet-ship></p>
-      <p class="muted" data-sheet-desc></p>
-
-      <div class="sheet-actions">
-        <div class="qty big">
-          <button data-sheet-qty-dec aria-label="Menos">−</button>
-          <span data-sheet-qty>1</span>
-          <button data-sheet-qty-inc aria-label="Más">+</button>
+    <div class="sheet-scroll">
+      <img data-sheet-img alt="" loading="lazy"/>
+      <div class="sheet-body">
+        <span class="tag" data-sheet-cat></span>
+        <p class="brand-line" data-sheet-brand></p>
+        <h3 data-sheet-name></h3>
+        <div class="sheet-rating" data-sheet-rating></div>
+        <div class="sheet-prices">
+          <span class="price" data-sheet-price></span>
+          <span class="price-old" data-sheet-price-old hidden></span>
+          <span class="sale-tag" data-sheet-sale hidden></span>
         </div>
-        <button class="btn primary block" data-sheet-add>Agregar al carrito</button>
-      </div>
+        <p class="ship-note small" data-sheet-ship></p>
+        <p class="muted" data-sheet-desc></p>
 
-      <div class="stock-hint" data-sheet-stock></div>
+        <div class="sheet-actions">
+          <div class="qty big">
+            <button data-sheet-qty-dec aria-label="Menos">−</button>
+            <span data-sheet-qty>1</span>
+            <button data-sheet-qty-inc aria-label="Más">+</button>
+          </div>
+          <button class="btn primary block" data-sheet-add>Agregar al carrito</button>
+        </div>
 
-      <div class="related" data-related-wrap hidden>
-        <h4>Te puede interesar</h4>
-        <div class="related-strip" data-related></div>
+        <div class="stock-hint" data-sheet-stock></div>
+
+        <div class="related" data-related-wrap hidden>
+          <h4>Te puede interesar</h4>
+          <div class="related-strip" data-related></div>
+        </div>
       </div>
     </div>
   </div>

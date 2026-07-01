@@ -778,9 +778,16 @@ function openSheet(id){
 
   $("[data-sheet]").hidden = false;
   document.body.style.overflow = "hidden";
-  $(".sheet-card").scrollTop = 0;
+  const sc = $(".sheet-scroll"); if (sc) sc.scrollTop = 0;
 }
 function closeSheet(){ $("[data-sheet]").hidden = true; document.body.style.overflow = ""; }
+
+document.addEventListener("keydown", (e) => {
+  if (e.key !== "Escape") return;
+  if (!$("[data-sheet]").hidden)        return closeSheet();
+  if (!$("[data-cart-drawer]").hidden)  return closeCart();
+  if (!$("[data-drawer]").hidden)       return closeDrawer();
+});
 
 function sheetQtyChange(d){
   const p = state.products.find(x => x.id === state.sheetPid);
