@@ -4,7 +4,8 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
 <meta name="theme-color" content="#0A1E3F" />
-<title>Limpio — tienda de productos de limpieza</title>
+<title>Limpio — productos de limpieza para todos los días</title>
+<meta name="description" content="Detergentes, desinfectantes y productos de limpieza para cocina, baño, pisos y ropa. Envíos a todo el país." />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700&display=swap" rel="stylesheet" />
@@ -12,90 +13,168 @@
 </head>
 <body>
 
-<!-- decorative background bubbles -->
-<div class="foam" aria-hidden="true">
-  <span class="b b1"></span><span class="b b2"></span><span class="b b3"></span>
-  <span class="b b4"></span><span class="b b5"></span>
+<!-- promo bar -->
+<div class="promo" role="status">
+  <div class="promo-track">
+    <span>Envío gratis desde $15.000</span><span>·</span>
+    <span>Pago seguro con Mercado Pago</span><span>·</span>
+    <span>Retiro en sucursal sin cargo</span><span>·</span>
+    <span>Envío gratis desde $15.000</span><span>·</span>
+    <span>Pago seguro con Mercado Pago</span><span>·</span>
+    <span>Retiro en sucursal sin cargo</span>
+  </div>
 </div>
+
+<!-- sticky header -->
+<header class="site-head">
+  <button class="brand" data-nav="home" aria-label="Ir al inicio">
+    <span class="logo-dot"></span>
+    <span class="logo-word">Limpio<em>.</em></span>
+  </button>
+  <div class="search-wrap">
+    <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>
+    <input type="search" placeholder="Buscar producto o marca..." data-search aria-label="Buscar productos" />
+  </div>
+  <button class="icon-btn" data-nav="cart" aria-label="Carrito">
+    <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 4h2l2.4 12.3a2 2 0 002 1.7h8.2a2 2 0 002-1.6L21 8H6"/><circle cx="10" cy="21" r="1.4"/><circle cx="17" cy="21" r="1.4"/></svg>
+    <span class="badge" data-cart-count>0</span>
+  </button>
+</header>
 
 <!-- ============== HOME / CATALOG ============== -->
 <section class="view" data-view="home">
-  <header class="hero">
-    <div class="hero-top">
-      <div class="brand">
-        <span class="logo-dot"></span>
-        <span class="logo-word">Limpio<em>.</em></span>
-      </div>
-      <button class="pill ghost" data-nav="cart" aria-label="Carrito">
-        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 4h2l2.4 12.3a2 2 0 002 1.7h8.2a2 2 0 002-1.6L21 8H6"/><circle cx="10" cy="21" r="1.4"/><circle cx="17" cy="21" r="1.4"/></svg>
-        <span class="cart-count" data-cart-count>0</span>
-      </button>
+  <div class="hero">
+    <p class="eyebrow">Tienda / Productos de limpieza</p>
+    <h1 class="hero-title"><span class="italic">Limpieza</span> honesta,<br/>hecha para durar.</h1>
+    <p class="hero-sub">Detergentes, desinfectantes y productos de cuidado seleccionados por su rendimiento. Envíos a todo el país.</p>
+    <div class="trust-strip" aria-label="Beneficios">
+      <div><b>+2.500</b><span>pedidos entregados</span></div>
+      <div><b>24 h</b><span>envío en CABA</span></div>
+      <div><b>30 días</b><span>garantía</span></div>
     </div>
+  </div>
 
-    <h1 class="hero-title">
-      <span class="italic">Limpieza</span> que<br/>se siente <span class="mark">fresca.</span>
-    </h1>
-    <p class="hero-sub">Productos honestos para pisos, cocina, baño y ropa. Envíos a todo el país.</p>
-
-    <div class="chips" role="tablist" aria-label="Categorías">
-      <button class="chip is-active" data-filter="todos">Todos</button>
-      <button class="chip" data-filter="cocina">Cocina</button>
-      <button class="chip" data-filter="bano">Baño</button>
-      <button class="chip" data-filter="pisos">Pisos</button>
-      <button class="chip" data-filter="ropa">Ropa</button>
+  <section class="cats" aria-label="Categorías">
+    <div class="section-head">
+      <h2><i>01</i> Categorías</h2>
     </div>
-  </header>
+    <div class="cat-grid" data-cat-grid></div>
+  </section>
 
-  <main class="catalog">
-    <div class="catalog-head">
-      <h2>Catálogo</h2>
+  <section class="catalog" aria-label="Catálogo">
+    <div class="section-head">
+      <h2><i>02</i> Catálogo</h2>
       <span class="muted" data-count>0 productos</span>
     </div>
+
+    <!-- toolbar (sticky on scroll) -->
+    <div class="toolbar">
+      <button class="tool" data-open-filters>
+        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16M7 12h10M10 18h4"/></svg>
+        Filtros <em class="tool-badge" data-filter-count hidden>0</em>
+      </button>
+      <label class="tool select">
+        <span>Ordenar</span>
+        <select data-sort>
+          <option value="relevance">Relevancia</option>
+          <option value="price-asc">Precio: menor a mayor</option>
+          <option value="price-desc">Precio: mayor a menor</option>
+          <option value="name-asc">Nombre A–Z</option>
+          <option value="newest">Más nuevos</option>
+        </select>
+      </label>
+    </div>
+
+    <!-- active chips summary -->
+    <div class="active-filters" data-active-filters hidden></div>
+
     <div class="grid" data-grid></div>
-    <p class="empty" data-empty hidden>Todavía no hay productos en esta categoría.</p>
-  </main>
+    <p class="empty" data-empty hidden>
+      <b>No encontramos productos.</b><br/>
+      <span class="muted">Probá con otros filtros o borrá la búsqueda.</span>
+    </p>
+
+    <nav class="pager" data-pager aria-label="Paginación" hidden></nav>
+  </section>
+
+  <footer class="site-foot">
+    <div class="foot-cols">
+      <div>
+        <p class="foot-brand"><span class="logo-dot"></span>Limpio<em>.</em></p>
+        <p class="muted small">Productos honestos, precio justo.</p>
+      </div>
+      <div>
+        <h4>Tienda</h4>
+        <ul>
+          <li><a href="#" data-nav="home">Catálogo</a></li>
+          <li><a href="#" data-nav="cart">Carrito</a></li>
+          <li><a href="#" data-nav="profile">Mi cuenta</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Ayuda</h4>
+        <ul>
+          <li><a href="mailto:hola@limpio.com">hola@limpio.com</a></li>
+          <li>Lun a Vie · 9–18 h</li>
+          <li>Envíos a todo el país</li>
+        </ul>
+      </div>
+      <div>
+        <h4>Pago</h4>
+        <ul class="pay">
+          <li>Mercado Pago</li>
+          <li>Transferencia</li>
+          <li>Efectivo (retiro)</li>
+        </ul>
+      </div>
+    </div>
+    <p class="foot-bottom muted small">© <span data-year></span> Limpio. Hecho con cariño.</p>
+  </footer>
 </section>
 
 <!-- ============== CART ============== -->
 <section class="view" data-view="cart" hidden>
-  <header class="sub-hero">
+  <div class="sub-hero">
     <button class="back" data-nav="home" aria-label="Volver">←</button>
     <h1>Tu carrito</h1>
-  </header>
-  <main class="cart-wrap">
+  </div>
+  <div class="wrap">
     <ul class="cart-list" data-cart-list></ul>
-    <p class="empty" data-cart-empty hidden>Tu carrito está vacío. Volvé al <a href="#" data-nav="home">catálogo</a>.</p>
+    <p class="empty" data-cart-empty hidden>
+      <b>Tu carrito está vacío.</b><br/>
+      <a href="#" data-nav="home">Volver al catálogo →</a>
+    </p>
     <div class="cart-total" data-cart-total hidden>
       <div class="row"><span>Subtotal</span><strong data-subtotal>$0</strong></div>
-      <div class="row muted"><span>Envío</span><span>a calcular</span></div>
+      <div class="row muted"><span>Envío</span><span>a calcular en checkout</span></div>
       <button class="btn primary block" data-checkout>Finalizar compra</button>
+      <p class="muted small center">Pago 100% seguro con Mercado Pago</p>
     </div>
-  </main>
+  </div>
 </section>
 
 <!-- ============== PROFILE / AUTH ============== -->
 <section class="view" data-view="profile" hidden>
-  <header class="sub-hero">
+  <div class="sub-hero">
     <button class="back" data-nav="home" aria-label="Volver">←</button>
     <h1>Mi cuenta</h1>
-  </header>
+  </div>
 
-  <main class="auth" data-auth-forms>
-    <!-- logged-out -->
+  <div class="wrap auth" data-auth-forms>
     <div data-anon>
       <div class="tabs">
         <button class="tab is-active" data-tab="login">Iniciar sesión</button>
         <button class="tab" data-tab="register">Registrarse</button>
       </div>
 
-      <form class="form" data-form="login">
+      <form class="form" data-form="login" novalidate>
         <label>Email<input type="email" name="email" required autocomplete="email" placeholder="tu@correo.com"/></label>
         <label>Contraseña<input type="password" name="password" required autocomplete="current-password" placeholder="••••••••"/></label>
         <button class="btn primary block" type="submit">Entrar</button>
-        <p class="hint">¿Admin? Usá <code>admin@limpio.com</code> / <code>admin123</code>.</p>
+        <p class="hint">Admin de prueba: <code>admin@limpio.com</code> / <code>admin123</code></p>
       </form>
 
-      <form class="form" data-form="register" hidden>
+      <form class="form" data-form="register" novalidate hidden>
         <label>Nombre<input name="name" required placeholder="Cómo te llamás"/></label>
         <label>Email<input type="email" name="email" required autocomplete="email" placeholder="tu@correo.com"/></label>
         <label>Contraseña<input type="password" name="password" required minlength="6" autocomplete="new-password" placeholder="Mínimo 6 caracteres"/></label>
@@ -103,7 +182,6 @@
       </form>
     </div>
 
-    <!-- logged-in -->
     <div data-authed hidden>
       <div class="card user-card">
         <div class="avatar" data-avatar>?</div>
@@ -116,43 +194,57 @@
       <button class="btn ghost block" data-admin-entry hidden>Panel de administrador →</button>
       <button class="btn danger block" data-logout>Cerrar sesión</button>
     </div>
-  </main>
+  </div>
 </section>
 
 <!-- ============== ADMIN ============== -->
 <section class="view" data-view="admin" hidden>
-  <header class="sub-hero">
+  <div class="sub-hero">
     <button class="back" data-nav="profile" aria-label="Volver">←</button>
-    <h1>Admin</h1>
-  </header>
-  <main class="admin">
-    <form class="form card" data-form="product">
-      <h3>Nuevo producto</h3>
-      <label>Nombre<input name="name" required placeholder="Ej: Detergente floral 1L"/></label>
-      <label>Precio (ARS)<input name="price" type="number" min="0" step="1" required placeholder="1200"/></label>
-      <label>Categoría
-        <select name="category" required>
-          <option value="cocina">Cocina</option>
-          <option value="bano">Baño</option>
-          <option value="pisos">Pisos</option>
-          <option value="ropa">Ropa</option>
-        </select>
+    <h1>Panel admin</h1>
+  </div>
+  <div class="wrap admin">
+    <form class="form card" data-form="product" novalidate>
+      <h3 data-form-title>Nuevo producto</h3>
+      <input type="hidden" name="id" />
+      <div class="grid-2">
+        <label>Nombre<input name="name" required placeholder="Ej: Detergente floral 1L"/></label>
+        <label>Precio (ARS)<input name="price" type="number" min="0" step="1" required placeholder="1200"/></label>
+      </div>
+      <div class="grid-2">
+        <label>Categoría
+          <select name="category" required>
+            <option value="cocina">Cocina</option>
+            <option value="bano">Baño</option>
+            <option value="pisos">Pisos</option>
+            <option value="ropa">Ropa</option>
+            <option value="hogar">Hogar</option>
+          </select>
+        </label>
+        <label>Stock<input name="stock" type="number" min="0" step="1" placeholder="100" value="100"/></label>
+      </div>
+      <label>URL de la foto
+        <input name="image" type="url" placeholder="https://..." required />
+        <span class="hint left">Subí la imagen a Cloudinary, Imgur, Vercel Blob o tu CDN y pegá la URL.</span>
       </label>
-      <label>Descripción<textarea name="description" rows="3" placeholder="Para qué sirve, aroma, rendimiento..."></textarea></label>
-      <label>Foto
-        <input name="image" type="file" accept="image/*" required />
-      </label>
-      <button class="btn primary block" type="submit">Publicar producto</button>
+      <label>Descripción<textarea name="description" rows="3" placeholder="Aroma, rendimiento, tips de uso..."></textarea></label>
+      <div class="form-actions">
+        <button class="btn ghost" type="button" data-form-reset hidden>Cancelar edición</button>
+        <button class="btn primary" type="submit" data-form-submit>Publicar producto</button>
+      </div>
     </form>
 
     <div class="admin-list">
-      <h3>Productos publicados</h3>
+      <div class="section-head">
+        <h3>Publicados <em class="muted" data-admin-count>(0)</em></h3>
+        <input type="search" class="admin-search" placeholder="Buscar..." data-admin-search />
+      </div>
       <ul data-admin-list></ul>
     </div>
-  </main>
+  </div>
 </section>
 
-<!-- ============== BOTTOM NAV ============== -->
+<!-- ============== BOTTOM NAV (mobile) ============== -->
 <nav class="tabbar" aria-label="Navegación principal">
   <button class="tab-btn is-active" data-nav="home">
     <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 11l8-7 8 7v9a1 1 0 01-1 1h-4v-6h-6v6H5a1 1 0 01-1-1z"/></svg>
@@ -169,12 +261,40 @@
   </button>
 </nav>
 
-<!-- Product detail sheet -->
+<!-- ============== FILTER DRAWER ============== -->
+<aside class="drawer" data-drawer hidden aria-modal="true" role="dialog" aria-label="Filtros">
+  <div class="drawer-backdrop" data-drawer-close></div>
+  <div class="drawer-card">
+    <div class="drawer-head">
+      <h3>Filtros</h3>
+      <button class="drawer-close" data-drawer-close aria-label="Cerrar">×</button>
+    </div>
+    <div class="drawer-body">
+      <div class="filter-group">
+        <h4>Categoría</h4>
+        <div class="check-grid" data-cat-filters></div>
+      </div>
+      <div class="filter-group">
+        <h4>Precio</h4>
+        <div class="range-row">
+          <label>Mín<input type="number" data-price-min min="0" placeholder="0"/></label>
+          <label>Máx<input type="number" data-price-max min="0" placeholder="∞"/></label>
+        </div>
+      </div>
+    </div>
+    <div class="drawer-foot">
+      <button class="btn ghost" data-clear-filters>Limpiar</button>
+      <button class="btn primary" data-apply-filters>Ver <em data-apply-count>0</em> productos</button>
+    </div>
+  </div>
+</aside>
+
+<!-- Product sheet -->
 <div class="sheet" data-sheet hidden aria-modal="true" role="dialog">
   <div class="sheet-backdrop" data-sheet-close></div>
   <div class="sheet-card">
     <button class="sheet-close" data-sheet-close aria-label="Cerrar">×</button>
-    <img data-sheet-img alt="" />
+    <img data-sheet-img alt="" loading="lazy"/>
     <div class="sheet-body">
       <span class="tag" data-sheet-cat></span>
       <h3 data-sheet-name></h3>
